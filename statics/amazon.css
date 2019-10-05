@@ -198,9 +198,8 @@ div input[required]:hover {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* background-color: #f7f7f7; */
   background-color: #f7f7f7;
-  box-shadow: 0 0 2px 0 gray;
+  box-shadow: 0 0 1px 0 black;
 }
 
 #navbar li {

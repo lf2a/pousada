@@ -72,7 +72,7 @@ div input[required]:hover {
 
 #quartos {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
 }
 
@@ -198,8 +198,9 @@ div input[required]:hover {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  /* background-color: #f7f7f7; */
   background-color: #f7f7f7;
-  box-shadow: 0 0 1px 0 black;
+  box-shadow: 0 0 2px 0 gray;
 }
 
 #navbar li {
