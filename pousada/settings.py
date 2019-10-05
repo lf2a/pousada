@@ -12,7 +12,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['amazonpy.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'amazonpy.herokuapp.com']
 
 
 INSTALLED_APPS = [
