@@ -12,7 +12,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', 'pousadaamazon.herokuapp.com']
+ALLOWED_HOSTS = ['10.0.0.7', 'localhost', 'pousadaamazon.herokuapp.com']
 
 
 INSTALLED_APPS = [
