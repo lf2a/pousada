@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* login signup */
+
+#autenticacao {
+  display: grid;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#autenticacao div {
+  width: 400px;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: decimal;
+}
+
+.form-group label {
+  font-size: 18px;
+}
+
+div input {
+  width: 100%;
+  border: 0;
+  box-shadow: 0 0 1px 0 gray;
+  height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  color: rgb(68, 68, 68);
+  border-radius: 2px;
+}
+
+div input[required]:hover {
+  box-shadow: 0 0 2px 0 red;
+}
+
+#envio {
+  border: 0;
+  height: 40px;
+  width: 105%;
+  background: #009b3a;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#envio:hover {
+  background: #017a2e;
+}
+
+/* home */
+
+#quartos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* card */
+.quarto {
+  width: 400px;
+  margin: 10px;
+  background: #f7f7f78c;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 0 gray;
+}
+
+.imagem {
+  overflow-x: auto;
+}
+
+.imagem img {
+  border-radius: 2px;
+}
+
+.info {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.info thead {
+  font-weight: bold;
+}
+
+.info tbody {
+  color: rgb(122, 122, 122);
+}
+
+.info td {
+  font-size: 15px;
+  text-align: center;
+}
+
+#inicio,
+#termino {
+  width: 95%;
+  border: 0;
+}
+
+.quarto .aviso {
+  font-size: 15px;
+  text-align: center;
+}
+
+.quarto .aviso a {
+  /* text-decoration: none; */
+  font-weight: bold;
+  color: rgb(10, 139, 42);
+}
+
+.reservar {
+  margin: 10px 0 0 0;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background: #009b3a;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.reservar:hover {
+  background: #017a2e;
+}
+
+/* atualizar informações do usuario */
+#atualizar {
+  display: flex;
+  justify-content: center;
+}
+
+#atualizar div {
+  width: 400px;
+}
+
+/* reservas */
+.excluir {
+  width: 100%;
+  height: 40px;
+  background: #f4bb31;
+  text-align: center;
+  line-height: 40px;
+  border: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.excluir:hover {
+  background: #f6922d;
+}
+
+#nada {
+  display: grid;
+  justify-content: center;
+}
+
+#nada p {
+  font-size: 40px;
+  color: gainsboro;
+}
+
+/* rodapé */
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: gray;
+  text-align: center;
+}
+
+/* navbar */
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #f7f7f7; */
+  background-color: #f7f7f7;
+  box-shadow: 0 0 2px 0 gray;
+}
+
+#navbar li {
+  float: left;
+}
+
+#navbar li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navbar li a:hover {
+  background-color: rgb(216, 216, 216);
+}

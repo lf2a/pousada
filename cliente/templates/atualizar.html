@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block titulo %}Atualizar Informações{% endblock %}
+
+{% block navbar %}
+<div id="navbar">
+    <ul>
+        <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
+        <li><a href="{% url 'reservas' %}">Minhas reservas</a></li>
+        <li><a href="{% url 'excluir_conta' %}">Excluir conta</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block main %}
+<div id="atualizar">
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button id="envio" type="submit">Atualizar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

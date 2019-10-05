@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block titulo %}Minhas Reservas{% endblock %}
+
+{% block navbar %}
+<div id="navbar">
+  <ul>
+    <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
+    <li><a href="{% url 'atualizar' %}">Atualizar perfil</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block main %}
+{% if data %}
+<div id="quartos">
+  {% for d in data %}
+  <div class="quarto">
+    <div class="imagem">
+      <table>
+        <tr>
+          {% for foto in d.foto %}
+          <td>
+            <img src="/static/media/{{ foto.url }}" alt="foto" width="300" height="200" title="Foto do quarto">
+          </td>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
+    {% csrf_token %}
+    <table class="info">
+      <thead>
+        <tr>
+        <tr>
+          <td colspan="5">Informações do quarto</td>
+        </tr>
+        <td>Número</td>
+        <td>Andar</td>
+        <td>Banheiro</td>
+        <td>Cama</td>
+        <td>Diária</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ d.quarto.numero }}</td>
+          <td>{{ d.quarto.andar }}</td>
+          <td>{{ d.quarto.banheiro }}</td>
+          <td>{{ d.quarto.cama }}</td>
+          <td>R$:{{ d.quarto.diaria }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="info">
+      <thead>
+        <tr>
+          <td colspan="3">Informações da reserva</td>
+        </tr>
+        <tr>
+          <td>Início</td>
+          <td>Término</td>
+          <td>Total</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ d.reserva.inicio }}</td>
+          <td>{{ d.reserva.termino }}</td>
+          <td>R$:{{ d.reserva.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <form action="/reserva/{{ d.quarto.id }}/excluir" method="get">
+      <button type="submit" class="excluir">Cancelar reserva</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div id="nada">
+  <p>Tudo limpo por aqui.</p>
+</div>
+{% endif %}
+{% endblock %}

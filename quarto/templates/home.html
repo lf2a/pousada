@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block titulo %}Amazon{% endblock %}
+
+{% block main %}
+{% if user.is_authenticated %}
+<div id="navbar">
+  <ul>
+    <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
+    <li><a href="{% url 'reservas' %}">Minhas reservas</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+  </ul>
+</div>
+{% else %}
+<div id="navbar">
+  <ul>
+    <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
+    <li><a href="{% url 'login' %}?next=/reservas">Logar-se</a></li>
+    <li><a href="{% url 'signup' %}">Cadastrar-se</a></li>
+  </ul>
+</div>
+{% endif %}
+
+{% if data %}
+<div id="quartos">
+  {% for d in data %}
+  <div class="quarto">
+    <div class="imagem">
+      <table>
+        <tr>
+          {% for foto in d.foto %}
+          <td><img src="/static/media/{{ foto.url }}" alt="foto" width="300" height="200" title="Foto do quarto"></td>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
+    <form action="/reserva/{{ d.quarto.id }}" method="post">
+      {% csrf_token %}
+      <table class="info">
+        <thead>
+          <tr>
+            <td>Número</td>
+            <td>Andar</td>
+            <td>Banheiro</td>
+            <td>Cama</td>
+            <td>Diária</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ d.quarto.numero }}</td>
+            <td>{{ d.quarto.andar }}</td>
+            <td>{{ d.quarto.banheiro }}</td>
+            <td>{{ d.quarto.cama }}</td>
+            <td>R$:{{ d.quarto.diaria }}</td>
+          </tr>
+        </tbody>
+      </table>
+      {% if user.is_authenticated %}
+      <div class="form-group">
+        <label class="control-label  " for="inicio">Início</label>
+        <div class=" ">
+          <input type="date" name="inicio" id="inicio" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label  " for="termino">Termino</label>
+        <div class=" ">
+          <input type="date" name="termino" id="termino" required>
+        </div>
+      </div>
+
+      <button class="reservar" type="submit">Reservar</button>
+      {% else %}
+      <p class="aviso">Para fazer reserva é necessário estar <a href="{% url 'login' %}?next=/">logado</a>.<br> Caso não
+        possua conta <a href="{% url 'signup' %}">cadastrar</a></p>
+      {% endif %}
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div id="nada">
+  <p>Tudo limpo por aqui.</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block titulo %}Login{% endblock %}
+
+{% block navbar %}
+<div id="navbar">
+    <ul>
+        <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
+        <li><a href="{% url 'signup' %}">Cadastro</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block main %}
+<div id="autenticacao">
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button id="envio" type="submit" class="btn btn-info">Entrar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
