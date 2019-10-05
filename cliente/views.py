@@ -55,9 +55,14 @@ def atualizar_informacoes(request):
 
 @login_required
 def excluir(request):
+    # captura o id do usuario logado
     id_usuario = request.user.id
 
+    # busca o usuario
     usuario = User.objects.get(id=id_usuario)
 
+    # exclui do banco
     usuario.delete()
+
+    # redireciona para a pagina principal
     return redirect('home')

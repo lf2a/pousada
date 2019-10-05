@@ -218,3 +218,9 @@ div input[required]:hover {
 #navbar li a:hover {
   background-color: rgb(216, 216, 216);
 }
+
+#error {
+  text-align: center;
+  font-size: 40px;
+  color: gainsboro;
+}

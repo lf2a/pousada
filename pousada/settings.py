@@ -1,11 +1,16 @@
+# python standard library
 import os
+
+# external library
+from decouple import config
+from dj_database_url import parse as dburl
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = 'nfi_j^8a$t*@4v^(n1w7!)tg5ba3pv$d_innmlkpxywz5-g!t+'
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,11 +60,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pousada.wsgi.application'
 
 
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 
@@ -90,14 +94,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = [
-#     'statics',
-# ]
-
-# MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

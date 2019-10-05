@@ -1,3 +1,4 @@
+# django
 from django.db import models
 
 
@@ -14,6 +15,8 @@ class Quarto(models.Model):
 
 class ImagemQuarto(models.Model):
     url = models.ImageField(upload_to='quarto_imagens')
+
+    # um quarto pode ter varias imagens
     quarto = models.ForeignKey(Quarto, on_delete=models.CASCADE)
 
     def __str__(self):

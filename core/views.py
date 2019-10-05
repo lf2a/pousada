@@ -93,6 +93,7 @@ def excluir_reserva(request, id_quarto):
     id_user = request.user.id
     id_user_reserva = reserva.cliente.id
 
+    # verifica se o id do dono da reserva é o mesmo id do usuario logado
     if id_user == id_user_reserva:
         # apagando reserva
         reserva.delete()

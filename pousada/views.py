@@ -13,6 +13,14 @@ def deslogar(request):
     return redirect('home')
 
 
+def error_404_view(req, exception):
+    data = {
+        "msg": "404 Não Encontrado"
+    }
+
+    return render(req, '404.html', {'data': data})
+
+
 class SignUp(generic.CreateView):
     form_class = UserRegisterForm
     success_url = reverse_lazy('login')
