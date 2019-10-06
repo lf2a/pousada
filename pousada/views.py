@@ -13,12 +13,12 @@ def deslogar(request):
     return redirect('home')
 
 
-def error_404_view(req, exception):
+def error_404_view(request, exception):
     data = {
         "msg": "404 Não Encontrado"
     }
 
-    return render(req, '404.html', {'data': data})
+    return render(request, '404.html', {'data': data})
 
 
 class SignUp(generic.CreateView):
