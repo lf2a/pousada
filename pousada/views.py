@@ -23,5 +23,5 @@ def error_404_view(req, exception):
 
 class SignUp(generic.CreateView):
     form_class = UserRegisterForm
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home')
     template_name = 'registration/signup.html'
