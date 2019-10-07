@@ -233,27 +233,20 @@ div input[required]:hover {
 }
 
 .imagem {
-  width: 420px;
+  width: 400px;
   border: 0;
   box-shadow: 0 0 1px 0 gray;
   border-radius: 2px;
-  padding: 10px;
-  margin: 0 10px;
 }
 
-.imagem img,
-.imagem form {
+.imagem img, .imagem form {
   width: 100%;
-}
-
-.select {
-  width: 100%;
-  height: 40px;
-  border: 1px solid gray;
-  margin-bottom: 10px;
 }
 
 .renomear {
-  width: 400px;
-  margin-bottom: 10px;
+  width: 360px;
 }
+
+/* .imagem #envio {
+  width: 98%;
+} */

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Controle de imagens{% endblock %}
+
+{% block navbar %}
+<div id="navbar">
+  <ul>
+    <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="{% url 'imagem' %}">Atualizar</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block main %}
+
+<div id="imagens">
+  {% for a in imagem %}
+  <div class="imagem">
+    <div>
+      <table>
+        <tr>
+          <td>
+            <a href="{{ a.url }}">
+              <img src="{{ a.url }}" alt="{{ a.url }}" title="{{ a.path }} | {{ a.nome }}">
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <form method="post">
+      {% csrf_token %}
+      <select name="option" class="select" required>
+        <option value="-----"></option>
+        <option value="renomear">Renomear</option>
+        <option value="apagar">Apagar</option>
+      </select>
+      <input type="hidden" name="path" value="{{ a.path }}">
+      <input type="text" value="{{ a.nome }}" name="renomear" class="renomear">
+      <button type="submit" class="excluir">Concluir</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

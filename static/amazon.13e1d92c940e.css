@@ -238,7 +238,6 @@ div input[required]:hover {
   box-shadow: 0 0 1px 0 gray;
   border-radius: 2px;
   padding: 10px;
-  margin: 0 10px;
 }
 
 .imagem img,
@@ -254,6 +253,6 @@ div input[required]:hover {
 }
 
 .renomear {
-  width: 400px;
+  width: 390px;
   margin-bottom: 10px;
 }

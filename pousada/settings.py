@@ -105,6 +105,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/static/media/'
+# quando debug for `True` descomente a linha de baixo e comente a linha de cima
+# MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'static/media'
 

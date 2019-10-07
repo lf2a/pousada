@@ -7,6 +7,10 @@
   <ul>
     <li><a class="active" href="{% url 'home' %}">Amazon</a></li>
     <li><a href="{% url 'reservas' %}">Minhas reservas</a></li>
+    {% if user.is_superuser %}
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="{% url 'imagem' %}">Imagens</a></li>
+    {% endif %}
     <li><a href="{% url 'logout' %}">Logout</a></li>
   </ul>
 </div>
