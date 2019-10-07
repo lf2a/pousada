@@ -10,7 +10,6 @@
     <li><a href="{% url 'atualizar' %}">Atualizar perfil</a></li>
     {% if user.is_superuser %}
     <li><a href="/admin">Admin</a></li>
-    <li><a href="{% url 'imagem' %}">Imagens</a></li>
     {% endif %}
     <li><a href="{% url 'logout' %}">Logout</a></li>
   </ul>

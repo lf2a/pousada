@@ -232,7 +232,7 @@ div input[required]:hover {
   justify-content: center
 }
 
-.imagem {
+#imagens .imagem {
   width: 420px;
   border: 0;
   box-shadow: 0 0 1px 0 gray;
@@ -241,8 +241,8 @@ div input[required]:hover {
   margin: 0 10px;
 }
 
-.imagem img,
-.imagem form {
+#imagens .imagem img,
+#imagens .imagem form {
   width: 100%;
 }
 
