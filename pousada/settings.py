@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'cliente',
     'core',
     'bootstrapform',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
